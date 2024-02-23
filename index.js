@@ -122,8 +122,8 @@ async function migrateData() {
 }
 
 // Programar la ejecución del cron al final del día
-migrateData();
-// cron.schedule('59 23 * * *', () => {
-//   console.log('Ejecutando migración de datos al final del día...');
-//   migrateData();
-// });
+// migrateData();
+cron.schedule("59 23 * * *", () => {
+  console.log("Ejecutando migración de datos al final del día...");
+  migrateData();
+});
